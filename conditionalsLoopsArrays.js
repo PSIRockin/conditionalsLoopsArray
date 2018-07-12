@@ -13,6 +13,8 @@ console.log("Challenge #2:");
 // push the user's first command line argument to the end of the 
 // "roster" array (ideally, it's a pokemon's name!)
 // console.log the "roster" array
+roster.push (process.argv [2])
+console.log (roster)
 
 // ==================================================================
 console.log("Challenge #3:");
@@ -20,6 +22,18 @@ console.log("Challenge #3:");
 // the user's second command line argument
 // NOTE: consider what data type command line arguments come in as
 // console.log the "roster" array
+if (process.argv[3] == "Pikachu") {
+    roster.splice (0,1)
+}else if (process.argv[3] == "MewTwo") {
+    roster.splice(1,1)
+}else if (process.argv[3] == "Onix") {
+    roster.splice(2,1)
+}else if (process.argv[3] == "Eevee") {
+    roster.splice(3,1)
+}else if (process.argv[3] == process.argv[2]) {
+    roster.splice(4,1)
+}
+console.log (roster)
 
 //////////////////
 // CONDITIONALS //
@@ -27,9 +41,11 @@ console.log("Challenge #3:");
 console.log("Challenge #4:");
 // Create a variable called "catchChance" and set it equal to .25
 // Note: this corresponds to a 25% chance to catch a pokemon!
+const catchChance = 0.25
 
 // Create a variable called "catchAttempt" and set it equal to 
 // Math.random()
+const catchAttempt = Math.random()
 
 // Note: we'll learn more about Math.random() later, but for now
 // just think of it as equal to a random decimal between 0 and 1
@@ -37,12 +53,21 @@ console.log("Challenge #4:");
 // If "catchAttempt" is less than "catchChance" console.log "Caught it!"
 // Otherwise, console.log "Aargh! Almost had it!"
 
+if (catchAttempt <= catchChance){
+    console.log ("Gotcha! Caught it!")
+}else{
+    console.log ("Aargh! Almost had it!")
+}
 // ==================================================================
 console.log("Challenge #5:");
 // If the number of pokemon in the "roster" array is less than 6
 // Add an empty string to the "roster" array (signifying an empty
 // spot)
+if (roster.length < 6){
+    roster.splice ()
+}
 
+console.log (roster)
 // Console.log the "roster" array
 
 // ==================================================================
